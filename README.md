@@ -19,11 +19,13 @@ Current version is 1.0.1 released on 3rd Jan, 2015. Initial release was 1.0.0 on
  
  <h1>Uses</h1>
  <h2>Open on page load:</h2>
-<code> 
+
+```javascript 
 	$.coolBox.openCoolBox({
 	     id:'pageLoadOpen' //id of anchor element with href attribute to open a div inline
 	});
-</code>
+```
+
  <h2>With Callback function</h2>
  
  ```javascript
@@ -44,9 +46,12 @@ $(".inlineOverlayCloseEnabledCallback").coolBox({
  ```
  
  <h2>Responsive Modal</h2>
+
+```javascript
  $(".responsive").coolBox({
      overlayClose: true,
      escClose: true,
      alwaysOnTop: true,
      responsive: true
  });
+```
