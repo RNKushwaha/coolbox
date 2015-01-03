@@ -25,6 +25,8 @@ Current version is 1.0.1 released on 3rd Jan, 2015. Initial release was 1.0.0 on
 	});
 </code>
  <h2>With Callback function</h2>
+ 
+ ```javascript
 $(".inlineOverlayCloseEnabledCallback").coolBox({
    overlayClose: true,
    escClose: true,
@@ -39,6 +41,7 @@ $(".inlineOverlayCloseEnabledCallback").coolBox({
      console.log("after Complete");
    }
 });
+ ```
  
  <h2>Responsive Modal</h2>
  $(".responsive").coolBox({
