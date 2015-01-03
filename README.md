@@ -5,25 +5,26 @@ Current version is 1.0.1 released on 3rd Jan, 2015. Initial release was 1.0.0 on
 
 <ul>
 <li>Easy to use</li>
+<li>Customizable</li>
+<li>Attractive</li>
+<li>Theming with easeness</li>
+<li>Opening a part of html page as modal</li>
+<li>Opening a url through ajax</li>
+<li>Slideshow of images/videos/html elements with title and or description</li>
+<li>Play Youtube/vimeo video</li>
+<li>Auto open/close, callback functions</li>
+<li>CSS-3/HTML5 Animations to open modal window</li>
+<li>Integrate social media to modal window's images/videos</li>
 </ul>
-Customizable
-Attractive
-Theming with easeness
-Opening a part of html page as modal
-Opening a url through ajax
-Slideshow of images/videos/html elements with title and or description
-Play Youtube/vimeo video
-Auto open/close, callback functions
-CSS-3/HTML5 Animations to open modal window
-Integrate social media to modal window's images/videos
  
  <h1>Uses</h1>
- Open on page load:
-$.coolBox.openCoolBox({
-     id:'pageLoadOpen' //id of anchor element with href attribute to open a div inline
-});
-
- With Callback function
+ <h2>Open on page load:</h2>
+<code> 
+	$.coolBox.openCoolBox({
+	     id:'pageLoadOpen' //id of anchor element with href attribute to open a div inline
+	});
+</code>
+ <h2>With Callback function</h2>
 $(".inlineOverlayCloseEnabledCallback").coolBox({
    overlayClose: true,
    escClose: true,
@@ -39,7 +40,7 @@ $(".inlineOverlayCloseEnabledCallback").coolBox({
    }
 });
  
- Responsive Modal
+ <h2>Responsive Modal</h2>
  $(".responsive").coolBox({
      overlayClose: true,
      escClose: true,
