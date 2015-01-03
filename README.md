@@ -3,7 +3,9 @@ coolbox
 
 Current version is 1.0.1 released on 3rd Jan, 2015. Initial release was 1.0.0 on 7th October, 2014 at 1:11pm. I want to add following features to coolBox for my daily task which often requires when developing websites and web apps. It takes a lot of time to search, test every plugin, make compatible to use one of them from a tons of plugins, remove jQuery conflicts when using with severals third party plugins and to add new features as client demands. These are below--
 
-Easy to use
+<ul>
+<li>Easy to use</li>
+</ul>
 Customizable
 Attractive
 Theming with easeness
