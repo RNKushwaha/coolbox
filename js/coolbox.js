@@ -162,8 +162,7 @@
               
 		    	$(window).bind('scroll', function(){
 					if(o.alwaysOnTop==true){
-						console.log("scroll binds here");
-			        	$oBoxWrapper.css({
+						$oBoxWrapper.css({
 				        	"top": $(document).scrollTop()+($(window).height() - $oBoxWrapper.innerHeight()) / 2
 				        });
 			        }
