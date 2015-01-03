@@ -27,7 +27,7 @@ It takes a lot of time to search, test every plugin, make compatible to use one 
   var settings = {
 		            escClose        : false,
 		            overlayClose    : true,
-		            alwaysOnTop     : false
+		            alwaysOnTop     : false,
 		            complete        : false,//callback function
 		            beforeStart     : false,//callback function
 		            onClose         : false,//callback function
@@ -37,7 +37,7 @@ It takes a lot of time to search, test every plugin, make compatible to use one 
 		            borderColor     : "black",
 		            background      : "#333",
 		            opacity         : "0.8",
-		            zindex          : "99991",
+		            zindex          : "99991"
 		};
  ```
  
