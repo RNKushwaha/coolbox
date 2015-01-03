@@ -27,7 +27,7 @@
         var settings = {
 		            escClose        : false,
 		            overlayClose    : true,
-		            alwaysOnTop     : false
+		            alwaysOnTop     : false,
 		            complete        : false,
 		            beforeStart     : false,
 		            onClose         : false,
@@ -37,7 +37,7 @@
 		            borderColor     : "black",
 		            background      : "#333",
 		            opacity         : "0.8",
-		            zindex          : "99991",
+		            zindex          : "99991"
 		};
 
         var o = {};
