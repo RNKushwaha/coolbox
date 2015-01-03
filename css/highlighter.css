@@ -1,0 +1,12 @@
+body{
+	font-size: 14px; font-family: calibiri, arial
+}
+a{
+	text-decoration: none; color:blue;
+}
+.highlighter{
+	background-color: #eee; color:#333; width:700px; padding: 10px;
+}
+.js-comment{
+	color:#999;
+}

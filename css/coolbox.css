@@ -1,0 +1,31 @@
+#clBoxWrapper { padding: 0px; overflow:auto; }
+ 
+#clBoxOuterWrapper{ 
+position: absolute;
+box-shadow: 3px 3px 5px #333; padding: 5px; border: 5px solid #eee;
+ background-color: #fff; border-radius: 5px; -moz-border-radius: 5px;
+-o-border-radius: 5px;-webkit-border-radius: 5px;
+}
+h1{
+	font-size:18px;
+}
+h2{
+	font-size: 16px;
+}
+h3{
+	font-size:14px;
+}
+#clBxClose{
+cursor: pointer;
+margin: -30px;
+position: relative;
+float: right;
+top:0;
+right:0;
+z-index: 9999999;
+color: red;
+height: 35px;
+width:35px;
+background:url(../images/close.png) no-repeat center left;
+}
+

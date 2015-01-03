@@ -1,0 +1,4 @@
+coolbox
+=======
+
+Light Box plugin

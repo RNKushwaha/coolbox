@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CoolBox</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/highlighter.css">
+        <link rel="stylesheet" href="css/coolbox.css">
+            <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+            <script type="text/javascript" src="js/coolbox.js"></script>
+            <script>
+                $(document).ready(function (e) {
+                    $(".inlineOverlayCloseDisabled").coolBox({
+                        overlayClose: false,
+                        escClose: false,
+                        height: '500px',
+                        width: '800px'
+                    });
+                    $(".inlineOverlayCloseDisabledCustomClose").coolBox({
+                        overlayClose: false,
+                        escClose: false,
+                        height: '500px',
+                        width: '800px'
+                    });
+                    $(".inlineOverlayCloseEnabled").coolBox({
+                        overlayClose: true,
+                        escClose: true,
+                        alwaysOnTop: true
+                    });
+                    $(".responsive").coolBox({
+                        overlayClose: true,
+                        escClose: true,
+                        alwaysOnTop: true,
+                        responsive: true
+                    });
+                    $(".inlineOverlayCloseEnabledCallback").coolBox({
+                        overlayClose: true,
+                        escClose: true,
+                        alwaysOnTop: true,
+                        complete : function(){
+                            console.log("completed action");
+                        },
+                        beforeStart: function(){
+                            console.log("before Start");
+                        },
+                        onClose: function(){
+                            console.log("after Complete");
+                        }
+                    });
+                    
+                     //$.coolBox.closeCoolBox();
+                     $.coolBox.openCoolBox({
+                     	id:'pageLoadOpen'
+                     });
+                     
+                     $(document).on("click",".clBxClose1",function(e){
+                     	$.coolBox.closeCoolBox({
+	                     	beforeClose: function(){
+	                            console.log("before close");
+	                        },
+	                        onClose: function(){
+	                            console.log("after close ");
+	                        }
+	                    });
+                     })
+                })
+            </script>
+        </head>
+        <body>
+            <h1>CoolBox: jQuery LightBox plugin </h1>
+            <h4 id="element">Author: RN Kushwaha</h4>
+            <div>
+                <ol>
+                    <li> <a href="#inlineOverlayCloseDisabledContainer" id="pageLoadOpen" class="inlineOverlayCloseDisabled">Open modal overlay close disabled, esc disabled</a></li>
+                    <li> <a href="#inlineOverlayCloseDisabledContainerCustomClose" class="inlineOverlayCloseDisabledCustomClose">Open modal overlay close disabled, esc disabled, custom close provided</a></li>
+                	<li> <a href="#inlineOverlayCloseEnabledContainer"  class="inlineOverlayCloseEnabled">Open modal overlay close enabled, esc enabled</a></li>
+                	<li> <a href="#inlineOverlayCloseEnabledContaineCallbackr"  class="inlineOverlayCloseEnabledCallback">Open modal overlay close enabled, esc enabled, with callback functions</a></li>
+                	<li> <a href="#responsiveBox"  class="responsive">Open modal overlay close enabled, esc enabled, with Responsive Modal</a></li>
+            </ol>
+        </div>
+        <h2>Open on page load:</h2>
+		
+		<div class="highlighter">
+			<code>
+				$.coolBox.openCoolBox({<br/>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id:'pageLoadOpen' <span class="js-comment">//id of anchor element with href attribute to open a div inline</span><br/>
+                });
+			</code>
+		</div>
+		<h2>With Callback function</h2>
+		<div class="highlighter">
+			<code>
+				$(".inlineOverlayCloseEnabledCallback").coolBox({<br/>
+                        &nbsp;&nbsp;overlayClose: true,<br/>
+                        &nbsp;&nbsp;escClose: true,<br/>
+                        &nbsp;&nbsp;alwaysOnTop: true,<br/>
+                        &nbsp;&nbsp;complete : function(){<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;console.log("complete action ");<br/>
+                        &nbsp;&nbsp;},<br/>
+                        &nbsp;&nbsp; beforeStart: function(){<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;console.log("before Start");<br/>
+                        &nbsp;&nbsp;},<br/>
+                        &nbsp;&nbsp;onClose: function(){<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;console.log("after Complete");<br/>
+                       &nbsp;&nbsp; }<br/>
+                    });<br/>
+            </code>
+		</div>
+		
+		<h2>Responsive Modal</h2>
+		<div class="highlighter">
+			<code>
+				$(".responsive").coolBox({<br/>
+                        &nbsp;&nbsp;overlayClose: true,<br/>
+                        &nbsp;&nbsp;escClose: true,<br/>
+                        &nbsp;&nbsp;alwaysOnTop: true,<br/>
+                        &nbsp;&nbsp;responsive: true<br/>
+                    });<br/>
+            </code>
+		</div>
+		
+		
+        <!-- This contains the hidden content for inline calls -->
+        <div style='display:none'>
+            <div id='inlineOverlayCloseDisabledContainer' >
+                <div style='padding:10px; background:#fff;'>
+                    <p><strong>Start content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>Last Line RN content comes from a hidden element on this page.</strong></p>
+                </div>
+            </div>
+            
+            <div id='inlineOverlayCloseDisabledContainerCustomClose' >
+                <div style='padding:10px; background:#fff;'>
+                    <a class="clBxClose1" href="javascript:void(0)" >Close</a>
+                    <p><strong>Start content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>Last Line RN content comes from a hidden element on this page.</strong></p>
+                </div>
+            </div>
+            <div id='inlineOverlayCloseEnabledContainer' style='padding:10px; background:#fff;'>
+                <p><strong>This content comes from a hidden element on this page.</strong></p>
+            </div>
+            
+            <div id='inlineOverlayCloseEnabledContaineCallbackr' style='padding:10px; background:#fff;'>
+                <p><strong>This content comes from a hidden element on this page. This has callback functions enabled</strong></p>
+            </div>
+             <div id='responsiveBox' style='padding:10px; background:#fff;'>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+                <p><strong>This content comes from a hidden element on this page. This modal is responsive. resize your window to check.</strong></p>
+            </div>
+            
+        </div>
+        <p>
+            Nulla facilisi. Nunc convallis mauris quis tempor vehicula. Phasellus eget ligula tempor, ullamcorper urna sit amet, feugiat orci. Sed pretium dui quis massa pellentesque accumsan. Vestibulum porta tincidunt massa maximus malesuada. Quisque sit amet ante ultrices, dictum lectus vitae, maximus neque. Pellentesque pretium nunc ultrices ipsum posuere eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula sem, sagittis et est eget, pellentesque tristique libero. Morbi pellentesque nulla ut malesuada accumsan. Integer porta tincidunt urna, at venenatis quam aliquam eu. In dui sapien, gravida sed cursus in, gravida non dolor. Proin condimentum porttitor magna, a ornare turpis aliquam in. Duis sit amet auctor orci. Cras quis enim at metus accumsan posuere a ut orci.<br/>
+            Pellentesque molestie dictum felis condimentum pharetra. Sed pulvinar porttitor elit. Suspendisse gravida efficitur rhoncus. Donec ullamcorper lorem ante, et pellentesque augue efficitur vel. In rutrum nibh mi, id feugiat nibh tristique non. Mauris fermentum dui sagittis ipsum sagittis, vel accumsan erat pharetra. Ut porta lacus id leo molestie, sit amet gravida ligula vulputate. In hac habitasse platea dictumst. Donec volutpat nisi nec velit sollicitudin, id feugiat quam facilisis. In bibendum massa vel euismod egestas. Nam blandit, lacus non viverra pulvinar, ex augue eleifend leo, sed ullamcorper eros metus quis leo. Donec id facilisis risus, a pellentesque justo. Curabitur luctus metus nec lorem facilisis pellentesque. Mauris facilisis ligula in nibh porta, non hendrerit nibh posuere.<br/><br/>
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque at ornare ex. Aliquam est nunc, dictum ut mi in, lobortis vehicula tellus. In eget dolor at nibh suscipit pulvinar sit amet vitae nunc. Ut orci leo, commodo ut arcu a, tristique ullamcorper orci. Mauris ante turpis, pretium a velit ac, dignissim pellentesque mauris. Phasellus posuere rutrum dignissim. Nullam placerat ligula eu semper placerat. Integer odio nibh, tincidunt sit amet quam et, dictum laoreet urna. Cras tincidunt, nisi eu tincidunt elementum, turpis elit placerat eros, vitae accumsan odio turpis at metus. Fusce laoreet, magna sit amet dapibus ullamcorper, tellus risus pellentesque turpis, feugiat aliquet elit turpis a ligula. Phasellus lorem urna, ullamcorper eget elit eget, rhoncus facilisis libero. Ut sit amet rhoncus augue, vitae pretium ipsum. Nunc sed velit vestibulum, dictum mi eu, pellentesque ante.<br/>
+            Sed viverra porttitor rhoncus. Duis consequat porttitor magna sed commodo. Aliquam sed efficitur diam. Cras pellentesque sollicitudin lorem nec consectetur. Aenean dignissim purus sit amet eleifend iaculis. Mauris placerat dolor ligula, in sagittis est fermentum at. Suspendisse sed ullamcorper nisl. Fusce consequat eleifend lorem, at tincidunt tortor dignissim eget. Aliquam tincidunt efficitur condimentum. Etiam ultrices et justo vitae efficitur. Etiam congue turpis mauris, ut aliquet erat dignissim quis. Integer quis quam lacinia, convallis odio a, tincidunt urna. Maecenas lacus lectus, placerat ac arcu vel, lobortis congue dui. In eu lobortis dui, et tristique lectus. Suspendisse ultrices justo vitae magna pellentesque vestibulum.<br/>
+            Suspendisse vitae finibus risus. Etiam maximus sem dui, ut posuere ante rhoncus at. In in tincidunt quam, et luctus orci. Aliquam efficitur venenatis risus, efficitur hendrerit ante imperdiet sed. Cras varius elit eget risus sagittis maximus. Integer tincidunt nibh nisl, vitae aliquam libero egestas a. Vestibulum ac enim luctus, ullamcorper magna et, scelerisque dolor. Quisque id eleifend ex. Fusce a mollis tortor. Aliquam erat volutpat.<br/><br/>
+            Suspendisse vitae finibus risus. Etiam maximus sem dui, ut posuere ante rhoncus at. In in tincidunt quam, et luctus orci. Aliquam efficitur venenatis risus, efficitur hendrerit ante imperdiet sed. Cras varius elit eget risus sagittis maximus. Integer tincidunt nibh nisl, vitae aliquam libero egestas a. Vestibulum ac enim luctus, ullamcorper magna et, scelerisque dolor. Quisque id eleifend ex. Fusce a mollis tortor. Aliquam erat volutpat.<br/><br/>
+            Suspendisse vitae finibus risus. Etiam maximus sem dui, ut posuere ante rhoncus at. In in tincidunt quam, et luctus orci. Aliquam efficitur venenatis risus, efficitur hendrerit ante imperdiet sed. Cras varius elit eget risus sagittis maximus. Integer tincidunt nibh nisl, vitae aliquam libero egestas a. Vestibulum ac enim luctus, ullamcorper magna et, scelerisque dolor. Quisque id eleifend ex. Fusce a mollis tortor. Aliquam erat volutpat.<br/><br/>
+            Suspendisse vitae finibus risus. Etiam maximus sem dui, ut posuere ante rhoncus at. In in tincidunt quam, et luctus orci. Aliquam efficitur venenatis risus, efficitur hendrerit ante imperdiet sed. Cras varius elit eget risus sagittis maximus. Integer tincidunt nibh nisl, vitae aliquam libero egestas a. Vestibulum ac enim luctus, ullamcorper magna et, scelerisque dolor. Quisque id eleifend ex. Fusce a mollis tortor. Aliquam erat volutpat.<br/><br/>
+            Suspendisse vitae finibus risus. Etiam maximus sem dui, ut posuere ante rhoncus at. In in tincidunt quam, et luctus orci. Aliquam efficitur venenatis risus, efficitur hendrerit ante imperdiet sed. Cras varius elit eget risus sagittis maximus. Integer tincidunt nibh nisl, vitae aliquam libero egestas a. Vestibulum ac enim luctus, ullamcorper magna et, scelerisque dolor. Quisque id eleifend ex. Fusce a mollis tortor. Aliquam erat volutpat.<br/><br/>
+            <br/>
+
+        </p>          
+    </body>
+</html>
