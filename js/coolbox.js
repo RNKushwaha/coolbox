@@ -25,21 +25,20 @@
     
     $.fn.coolBox = function (options) {
         var settings = {
-            complete: false,
-            onPageLoad: false,
-            beforeStart: false,
-            onClose: false,
-            escClose: false,
-            background: "#333",
-            opacity: "0.8",
-            height: "auto",
-            width: "auto",
-            overlayClose: true,
-            zindex: "99991",
-            border: "2px",
-            borderColor: "black",
-            alwaysOnTop: false
-        };
+		            escClose        : false,
+		            overlayClose    : true,
+		            alwaysOnTop     : false
+		            complete        : false,
+		            beforeStart     : false,
+		            onClose         : false,
+		            height          : "auto",
+		            width           : "auto",
+		            border          : "2px",
+		            borderColor     : "black",
+		            background      : "#333",
+		            opacity         : "0.8",
+		            zindex          : "99991",
+		};
 
         var o = {};
         $.extend(o, settings, options);

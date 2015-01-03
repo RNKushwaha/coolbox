@@ -20,6 +20,27 @@ It takes a lot of time to search, test every plugin, make compatible to use one 
 </ul>
  
  <h2>Uses</h2>
+ 
+ <h3>Available Options</h3>
+ 
+ ```javascript
+  var settings = {
+		            escClose        : false,
+		            overlayClose    : true,
+		            alwaysOnTop     : false
+		            complete        : false,//callback function
+		            beforeStart     : false,//callback function
+		            onClose         : false,//callback function
+		            height          : "auto",
+		            width           : "auto",
+		            border          : "2px",
+		            borderColor     : "black",
+		            background      : "#333",
+		            opacity         : "0.8",
+		            zindex          : "99991",
+		};
+ ```
+ 
  <h3>Open on page load:</h3>
 
 ```javascript 
