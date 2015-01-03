@@ -1,7 +1,9 @@
 coolbox
 =======
 
-Current version is 1.0.1 released on 3rd Jan, 2015. Initial release was 1.0.0 on 7th October, 2014 at 1:11pm. I want to add following features to coolBox for my daily task which often requires when developing websites and web apps. It takes a lot of time to search, test every plugin, make compatible to use one of them from a tons of plugins, remove jQuery conflicts when using with severals third party plugins and to add new features as client demands. These are below--
+Current version is **1.0.1** released on *3rd Jan, 2015*. Initial release was _1.0.0_ on 7th October, 2014. I want to add following features to [coolBox](http://aryan022.byethost13.com/coolwidgets/coolbox/) for my daily task which often requires when developing websites and web apps. 
+
+It takes a lot of time to search, test every plugin, make compatible to use one of them from a tons of plugins, remove jQuery conflicts when using with severals third party plugins and to add new features as client demands. These are below--
 
 <ul>
 <li>Easy to use</li>
@@ -17,8 +19,8 @@ Current version is 1.0.1 released on 3rd Jan, 2015. Initial release was 1.0.0 on
 <li>Integrate social media to modal window's images/videos</li>
 </ul>
  
- <h1>Uses</h1>
- <h2>Open on page load:</h2>
+ <h2>Uses</h2>
+ <h3>Open on page load:</h3>
 
 ```javascript 
 	$.coolBox.openCoolBox({
@@ -26,7 +28,7 @@ Current version is 1.0.1 released on 3rd Jan, 2015. Initial release was 1.0.0 on
 	});
 ```
 
- <h2>With Callback function</h2>
+ <h3>With Callback function</h3>
  
  ```javascript
 $(".inlineOverlayCloseEnabledCallback").coolBox({
@@ -45,7 +47,7 @@ $(".inlineOverlayCloseEnabledCallback").coolBox({
 });
  ```
  
- <h2>Responsive Modal</h2>
+ <h3>Responsive Modal</h3>
 
 ```javascript
  $(".responsive").coolBox({
