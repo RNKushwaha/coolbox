@@ -18,34 +18,9 @@ It takes a lot of time to search, test every plugin, make compatible to use one 
 <li>CSS-3/HTML5 Animations to open modal window</li>
 <li>Integrate social media to modal window's images/videos</li>
 </ul>
- 
- ##What's new in Version 1.0.2
- 
- ###Pass HTML string directly to coolBox to load in modal:
-
-```javascript 
-	var str='<h1>Hi</h1><p color="red">This is html for opening in a modal box. Looking Great?</p>Thanks to coolBox!';
-	$(".htmlContent").coolBox({
-	    overlayClose: true,
-	    escClose: true,
-	    alwaysOnTop: true,
-	    html: { content : str}
-	});
-```
-
- ###Load an URL directly to coolBox modal:
-
-```javascript 
-    $(".remoteSource").coolBox({
-        overlayClose: true,
-        escClose: true,
-        alwaysOnTop: true,
-        loadUrl: "remoteSource.html"
-    });
-```
 
 
- <h2>Uses</h2>
+ <h2>Usage:</h2>
  
  <h3>Available Options</h3>
  
@@ -103,4 +78,28 @@ $(".inlineOverlayCloseEnabledCallback").coolBox({
      alwaysOnTop: true,
      responsive: true
  });
+```
+<h2>What's new in Version 1.0.2</h2>
+ 
+ <h3>Pass HTML string directly to coolBox to load in modal:</h3>
+
+```javascript 
+	var str='<h1>Hi</h1><p color="red">This is html for opening in a modal box. Looking Great?</p>Thanks to coolBox!';
+	$(".htmlContent").coolBox({
+	    overlayClose: true,
+	    escClose: true,
+	    alwaysOnTop: true,
+	    html: { content : str}
+	});
+```
+
+ <h3>Load an URL directly to coolBox modal:</h3>
+
+```javascript 
+    $(".remoteSource").coolBox({
+        overlayClose: true,
+        escClose: true,
+        alwaysOnTop: true,
+        loadUrl: "remoteSource.html"
+    });
 ```
