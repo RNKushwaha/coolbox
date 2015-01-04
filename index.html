@@ -4,13 +4,14 @@
         <title>CoolBox</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/highlighter.css">
+        <!--<link rel="stylesheet" href="css/highlighter.css">-->
         <link rel="stylesheet" href="css/coolbox.css">
             <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+           <!-- <script src="js/jquery-1.10.2.js"></script>-->
             <script type="text/javascript" src="js/coolbox.js"></script>
             <script>
                 $(document).ready(function (e) {
-                    $(".inlineOverlayCloseDisabled").coolBox({
+                	$(".inlineOverlayCloseDisabled").coolBox({
                         overlayClose: false,
                         escClose: false,
                         height: '500px',
@@ -27,12 +28,27 @@
                         escClose: true,
                         alwaysOnTop: true
                     });
+                    
                     $(".responsive").coolBox({
                         overlayClose: true,
                         escClose: true,
                         alwaysOnTop: true,
                         responsive: true
                     });
+                    $(".remoteSource").coolBox({
+                        overlayClose: true,
+                        escClose: true,
+                        alwaysOnTop: true,
+                        loadUrl: "remoteSource.html"
+                    });
+                    var str='<h1>Hi</h1><p color="red">This is html for opening in a modal box. Looking Great?</p>Thanks to coolBox!';
+                    $(".htmlContent").coolBox({
+                        overlayClose: true,
+                        escClose: true,
+                        alwaysOnTop: true,
+                        html: { content : str}
+                    });
+                    
                     $(".inlineOverlayCloseEnabledCallback").coolBox({
                         overlayClose: true,
                         escClose: true,
@@ -71,6 +87,8 @@
             <h4 id="element">Author: RN Kushwaha</h4>
             <div>
                 <ol>
+                    <li> <a href="#" class="htmlContent">Open modal with HTML</a></li>
+                    <li> <a href="#" data-url="remoteSource.html" class="remoteSource">Open modal with remote Source</a></li>
                     <li> <a href="#inlineOverlayCloseDisabledContainer" id="pageLoadOpen" class="inlineOverlayCloseDisabled">Open modal overlay close disabled, esc disabled</a></li>
                     <li> <a href="#inlineOverlayCloseDisabledContainerCustomClose" class="inlineOverlayCloseDisabledCustomClose">Open modal overlay close disabled, esc disabled, custom close provided</a></li>
                 	<li> <a href="#inlineOverlayCloseEnabledContainer"  class="inlineOverlayCloseEnabled">Open modal overlay close enabled, esc enabled</a></li>
@@ -146,7 +164,7 @@
             <div id='inlineOverlayCloseDisabledContainer' >
                 <div style='padding:10px; background:#fff;'>
                     <p><strong>Start content comes from a hidden element on this page.</strong></p>
-                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>ESC and overlay close is disabled in this example.</strong></p>
                     <p><strong>This content comes from a hidden element on this page.</strong></p>
                     <p><strong>This content comes from a hidden element on this page.</strong></p>
                     <p><strong>This content comes from a hidden element on this page.</strong></p>
@@ -162,7 +180,7 @@
                 <div style='padding:10px; background:#fff;'>
                     <a class="clBxClose1" href="javascript:void(0)" >Close</a>
                     <p><strong>Start content comes from a hidden element on this page.</strong></p>
-                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p><strong>Close button is provided.</strong></p>
                     <p><strong>This content comes from a hidden element on this page.</strong></p>
                     <p><strong>This content comes from a hidden element on this page.</strong></p>
                     <p><strong>This content comes from a hidden element on this page.</strong></p>

@@ -28,6 +28,7 @@
 		            escClose        : false,
 		            overlayClose    : true,
 		            alwaysOnTop     : false,
+		            loadUrl         : false,
 		            complete        : false,
 		            beforeStart     : false,
 		            onClose         : false,
@@ -79,13 +80,37 @@
                 olBox.style.left = "0px";
 
                 document.body.appendChild(olBox);
-
                 $wrapContent = link.attr("href");
-                
-                if ($wrapContent.indexOf("#") == 0) {//load inline html on the page
+                $wrapContainer="";
+                if(o.html){
+					$wrapContainer = o.html.content;
+					initialize();
+					resizeClBox();
+				    callBackCalling();
+				}else if(o.loadUrl){//load a page's content via ajax
+                	$.ajax({
+				        url : o.loadUrl,
+				        type : "GET",
+				        success: function (data) {
+					        $wrapContainer=data;
+					        initialize();
+							resizeClBox();
+						    callBackCalling();
+					    },
+					    error: function(errorObj) {
+					        console.log(errorObj.statusText);
+					    },
+				    }) 
+				    
+				}else if ( !o.loadUrl && $wrapContent.indexOf("#") == 0 && $wrapContent.length>3 ) {//load inline html on the page
                     $wrapContainer = $($wrapContent).html();
-                    
-                    $oBoxWrapper = $("#clBoxOuterWrapper");
+                    initialize();
+					resizeClBox();
+				    callBackCalling();
+                }
+                
+                function initialize(){
+					$oBoxWrapper = $("#clBoxOuterWrapper");
                     $clBoxOverlay = $("#clBoxOverlay");
                     $clBoxOverlay.css({
                         "height": $(document).innerHeight(),
@@ -104,8 +129,8 @@
 			        	"left": ($(window).width() - $oBoxWrapper.innerWidth()) / 2,
 			        	"top": tp
 			        });
-                }
-                	
+				}	
+				
                 function resizeClBox(){
 					if(o.responsive==true){
 						var mxHeight= mxWidth= "auto";
@@ -150,8 +175,6 @@
                     }
 				}
 				
-				resizeClBox();
-				
                 $(window).bind('resize', function(){
 			       	 resizeClBox();
 			    	 $clBoxOverlay.css({
@@ -168,18 +191,20 @@
 			        }
 		    	});
 				
-                if (typeof o.complete == 'function') {
-                    o.complete.call(this); 
+				function callBackCalling(){
+					if (typeof o.complete == 'function') {
+	                    o.complete.call(this); 
+	                }
+	                if (o.overlayClose == true) {
+	                    $("#clBoxOverlay").on("click", function (e) {
+	                        closeClBox();
+	                    })
+	                }
+	                
+	                $("#clBxClose,.clBxClose").on('click', function (e) {
+	                    closeClBox();
+	                })
                 }
-                if (o.overlayClose == true) {
-                    $("#clBoxOverlay").on("click", function (e) {
-                        closeClBox();
-                    })
-                }
-                
-                $("#clBxClose,.clBxClose").on('click', function (e) {
-                    closeClBox();
-                })
                 
                 $(document).keyup(function (e) {
 					if (e.keyCode == 27 && o.escClose == true) {
