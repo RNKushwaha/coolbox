@@ -4,10 +4,9 @@
         <title>CoolBox</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<link rel="stylesheet" href="css/highlighter.css">-->
+        <link rel="stylesheet" href="css/highlighter.css">
         <link rel="stylesheet" href="css/coolbox.css">
             <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
-           <!-- <script src="js/jquery-1.10.2.js"></script>-->
             <script type="text/javascript" src="js/coolbox.js"></script>
             <script>
                 $(document).ready(function (e) {
@@ -155,6 +154,32 @@
                         &nbsp;&nbsp;alwaysOnTop: true,<br/>
                         &nbsp;&nbsp;responsive: true<br/>
                     });<br/>
+            </code>
+		</div>
+		
+		<h1>What's new in Version 1.0.2</h1>
+		
+		<h2>Pass HTML string directly to coolBox to load in modal:</h2>
+		<div class="highlighter">
+			<code>
+				var str=&rsquo;&lt;h1>Hi&lt;/h1>&lt;p color="red">This is html for opening in a modal box. Looking Great?&lt;/p>Thanks to coolBox!&rsquo;<br/>
+				    &nbsp;&nbsp;$(".htmlContent").coolBox({<br/>
+				       &nbsp;&nbsp;&nbsp;&nbsp; overlayClose: true,<br/>
+				       &nbsp;&nbsp;&nbsp;&nbsp; escClose: true,<br/>
+				       &nbsp;&nbsp;&nbsp;&nbsp; alwaysOnTop: true,<br/>
+				       &nbsp;&nbsp;&nbsp;&nbsp; html: { content : str}<br/>
+				    &nbsp;&nbsp;});<br/>
+            </code>
+		</div>
+		<h2>Load an URL directly to coolBox modal:</h2>
+		<div class="highlighter">
+			<code>
+				$(".remoteSource").coolBox({<br/>
+			        &nbsp;&nbsp;overlayClose: true,<br/>
+			        &nbsp;&nbsp;escClose: true,<br/>
+			        &nbsp;&nbsp;alwaysOnTop: true,<br/>
+			        &nbsp;&nbsp;loadUrl: "remoteSource.html"<br/>
+			    });<br/>
             </code>
 		</div>
 		
