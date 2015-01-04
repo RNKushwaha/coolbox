@@ -1,7 +1,7 @@
 coolbox
 =======
-
-Current version is **1.0.1** released on *3rd Jan, 2015*. Initial release was _1.0.0_ on 7th October, 2014. I want to add following features to [coolBox](http://aryan022.byethost13.com/coolwidgets/coolbox/) for my daily task which often requires when developing websites and web apps. 
+Version **1.0.2** released on 5th jan, 2015. 
+Previous version was **1.0.1** released on *3rd Jan, 2015*. Initial release was _1.0.0_ on 7th October, 2014. I want to add following features to [coolBox](http://aryan022.byethost13.com/coolwidgets/coolbox/) for my daily task which often requires when developing websites and web apps. 
 
 It takes a lot of time to search, test every plugin, make compatible to use one of them from a tons of plugins, remove jQuery conflicts when using with severals third party plugins and to add new features as client demands. These are below--
 
@@ -19,6 +19,32 @@ It takes a lot of time to search, test every plugin, make compatible to use one 
 <li>Integrate social media to modal window's images/videos</li>
 </ul>
  
+ ##What's new in Version 1.0.2
+ 
+ ###Pass HTML string directly to coolBox to load in modal:
+
+```javascript 
+	var str='<h1>Hi</h1><p color="red">This is html for opening in a modal box. Looking Great?</p>Thanks to coolBox!';
+	$(".htmlContent").coolBox({
+	    overlayClose: true,
+	    escClose: true,
+	    alwaysOnTop: true,
+	    html: { content : str}
+	});
+```
+
+ ###Load an URL directly to coolBox modal:
+
+```javascript 
+    $(".remoteSource").coolBox({
+        overlayClose: true,
+        escClose: true,
+        alwaysOnTop: true,
+        loadUrl: "remoteSource.html"
+    });
+```
+
+
  <h2>Uses</h2>
  
  <h3>Available Options</h3>
