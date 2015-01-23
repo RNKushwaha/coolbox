@@ -91,6 +91,12 @@
                 	$.ajax({
 				        url : o.loadUrl,
 				        type : "GET",
+				        beforeSend: function(){
+							$wrapContainer.html("loading..");
+						},
+						complete: function(){
+							//$clBoxWrapper.html("");
+						},
 				        success: function (data) {
 					        $wrapContainer=data;
 					        initialize();
